@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const glob = require('glob');
 const PurgeFontawesomePlugin = require('purge-fontawesome/webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -61,7 +62,13 @@ module.exports = {
                 glob.sync(path.join(__dirname, 'src/**/*'),  { nodir: true }),
             ],
         }),
+          new webpack.ProvidePlugin({
+              $: "jquery",
+              jQuery: "jquery",
+              "window.jQuery": "jquery"
+          })
     ],
+
 }
  
 

@@ -12,3 +12,6 @@ dom.watch();
 
 import './css/main.scss';
 import './js/app.js';
+import './js/tilt.js';
+
+ 
